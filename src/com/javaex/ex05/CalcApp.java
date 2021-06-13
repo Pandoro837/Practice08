@@ -23,13 +23,12 @@ public class CalcApp {
 				System.out.println("종료합니다.");
 				sc.close();
 				break;
-			}
-			
-			String[] sCalArray = sCal.split(" ");
-			iNum01 = Integer.parseInt(sCalArray[0]);
-			iNum02 = Integer.parseInt(sCalArray[2]);
-			
-			switch(sCalArray[1]) {
+			} else {
+				String[] sCalArray = sCal.split(" ");
+				iNum01 = Integer.parseInt(sCalArray[0]);
+				iNum02 = Integer.parseInt(sCalArray[2]);
+				
+				switch(sCalArray[1]) {
 				case "+": 
 					add.setValue(iNum01, iNum02);
 					System.out.println(">> " + add.calculate());
@@ -48,6 +47,8 @@ public class CalcApp {
 					break;
 				default: System.out.println("알 수 없는 연산입니다.");
 					break;
+				}
+				
 			}
 			
 		}
