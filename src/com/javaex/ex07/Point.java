@@ -12,5 +12,8 @@ public class Point {
 
 	//equals() 메소드를 작성하세요.
 
+	public boolean equals(Point p) {
+		return this.x == p.x;
+	}
 	
 }

@@ -6,26 +6,52 @@ public class CalcApp {
 
     public static void main(String[] args) {
 
+    	Add add = new Add();
+    	Div div = new Div();
+    	Mul mul = new Mul();
+    	Sub sub = new Sub();
     	Scanner sc = new Scanner(System.in);
     	
-    	System.out.print(">> ");
-    	String sCal = sc.nextLine();
-		sc.close();
+		int iNum01 = 0; 
+		int iNum02 = 0; 
 		
-		String[] sCalArray = sCal.split(" ");
-		
-		
-		
-		switch(sCalArray[1]) {
-			case "+":
+		while(true) {
+			System.out.print(">> ");
+			String sCal = sc.nextLine();
+			
+			if(sCal.equals("/q")) {
+				System.out.println("종료합니다.");
+				sc.close();
 				break;
-			case "-":
-				break;
-			case "*":
-				break;
-			case "/":
-				break;
+			}
+			
+			String[] sCalArray = sCal.split(" ");
+			iNum01 = Integer.parseInt(sCalArray[0]);
+			iNum02 = Integer.parseInt(sCalArray[2]);
+			
+			switch(sCalArray[1]) {
+				case "+": 
+					add.setValue(iNum01, iNum02);
+					System.out.println(">> " + add.calculate());
+					break;
+				case "-": 
+					sub.setValue(iNum01, iNum02);
+					System.out.println(">> " + sub.calculate());
+					break;
+				case "*": 
+					mul.setValue(iNum01, iNum02);
+					System.out.println(">> " + mul.calculate());
+					break;
+				case "/":
+					div.setValue(iNum01, iNum02);
+					System.out.println(">> " + div.calculate());
+					break;
+				default: System.out.println("알 수 없는 연산입니다.");
+					break;
+			}
+			
 		}
 		
     }
+    
 }
