@@ -42,8 +42,12 @@ public class CalcApp {
 					System.out.println(">> " + mul.calculate());
 					break;
 				case "/":
-					div.setValue(iNum01, iNum02);
-					System.out.println(">> " + div.calculate());
+					if(iNum02 != 0) {
+						div.setValue(iNum01, iNum02);
+						System.out.println(">> " + div.calculate());
+					} else {
+						System.out.println("0으로는 나눌 수 없습니다.");
+					}
 					break;
 				default: System.out.println("알 수 없는 연산입니다.");
 					break;
